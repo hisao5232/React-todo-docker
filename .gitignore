@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtualenv
+.venv/
+env/
+venv/
+
+# Environment
+.env
+
+# Docker
+*.pid
+*.log
+*.sock
+*.pid.lock
+db-data/
+
+# OS
+.DS_Store
+Thumbs.db
+
