@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_container
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      retries: 5
+      timeout: 3s
+
+  web:
+    build: .
+    container_name: fastapi_container
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy   # ✅ DBがreadyになってからFastAPI起動
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+
+volumes:
+  postgres_data:

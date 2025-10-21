@@ -1,0 +1,81 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+*.egg
+*.egg-info/
+.eggs/
+*.log
+
+# ======================
+# Virtual environments
+# ======================
+.env/
+.venv/
+env/
+venv/
+ENV/
+Pipfile.lock
+
+# ======================
+# IDE / Editor
+# ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# ======================
+# Byte-compiled / cache
+# ======================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ======================
+# macOS / Windows junk
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# Docker
+# ======================
+# Docker volumes / local database
+postgres_data/
+# Docker build cache
+*.pid
+*.tar
+*.log
+
+# ======================
+# FastAPI / Uvicorn cache
+# ======================
+*.db
+*.sqlite3
+
+# ======================
+# Environment files
+# ======================
+.env
+.env.*
+
+# ======================
+# PyCharm project settings
+# ======================
+.idea/
+
+# ======================
+# pytest / coverage
+# ======================
+.coverage
+htmlcov/
+.tox/
+pytest_cache/
+.cache/
