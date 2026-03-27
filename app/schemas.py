@@ -1,17 +1,28 @@
 from pydantic import BaseModel
+from typing import Optional
 from datetime import date
 
-class TodoBase(BaseModel):
+# Todo作成用
+class TodoCreate(BaseModel):
     title: str
-    description: str | None = None
-    due_date: date | None = None
+    description: Optional[str] = ""
+    due_date: Optional[date] = None
     completed: bool = False
 
-class TodoCreate(TodoBase):
-    pass
+# Todo更新用
+class TodoUpdate(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    due_date: Optional[date] = None
+    completed: Optional[bool] = None
 
-class TodoResponse(TodoBase):
+# Todoレスポンス用
+class Todo(BaseModel):
     id: int
+    title: str
+    description: str
+    due_date: Optional[date]
+    completed: bool
 
     class Config:
-        from_attributes = True
+        from_attributes = True  # Pydantic V2: orm_modeの代替
